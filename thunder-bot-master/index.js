@@ -441,4 +441,4 @@ if (command === 'cosmetic') {
   
 });
 
-client.login(config.token);
+client.login(process.env.BOT_TOKEN);
