@@ -38,7 +38,7 @@ if (command === 'say') {
 }
 if (command === 'leaked') {
 const FortniteAPI = require("fortnite-api-io");
-const fortniteAPI = new FortniteAPI("API-KEY"); // 7d283ce3-916c915b-dc4e615e-e3d25c1c
+const fortniteAPI = new FortniteAPI("7d283ce3-916c915b-dc4e615e-e3d25c1c"); // 7d283ce3-916c915b-dc4e615e-e3d25c1c :joy::joy::joy:
 
 
   let skin = [];
