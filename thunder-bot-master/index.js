@@ -38,7 +38,7 @@ if (command === 'say') {
 }
 if (command === 'leaked') {
 const FortniteAPI = require("fortnite-api-io");
-const fortniteAPI = new FortniteAPI("API-KEY");
+const fortniteAPI = new FortniteAPI("API-KEY"); // 12345
 
   let skin = [];
   let backpack = [];
@@ -48,7 +48,7 @@ const fortniteAPI = new FortniteAPI("API-KEY");
   let wrap = [];
   let glider = [];
 
-    const upcomingItems = await fortniteAPI.listUpcomingItems(lang);
+    const upcomingItems = await fortniteAPI.listUpcomingItems('en');
 
     upcomingItems.items.map((o, index) => {
       if (o.type === 'backpack') {
@@ -490,8 +490,6 @@ if (command === 'cosmetic') {
       message.channel.send(`No cosmetic was found for: ${content}`)
     })
 }
-}
-
 }
   
 });
