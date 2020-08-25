@@ -103,14 +103,14 @@ if (command === 'shop') {
         if (res.data.featured.entries) {
         embed.addField(`**- Featured**`, res.data.featured.entries.map(
                   (o, index) =>
-                    `${index + 1}. ${o.items[0].name} - ${o.finalPrice} <:vbux:709204621075415070>`
+                    `${index + 1}. ${o.items[0].name} - ${o.finalPrice} <:vbux:747505712757997578>`
                 )
                .join("\n"), true)
       }
       if (res.data.daily.entries) {
         embed.addField(`**- Daily**`, res.data.daily.entries.map(
                   (o, index) =>
-                    `${index + 1}. ${o.items[0].name} - ${o.finalPrice} <:vbux:709204621075415070>`
+                    `${index + 1}. ${o.items[0].name} - ${o.finalPrice} <:vbux:747505712757997578>`
                 )
                .join("\n"), true)
       }
@@ -118,7 +118,7 @@ if (command === 'shop') {
       if (res.data.specialFeatured) {
         embed.addField(`**- Special Featured**`, res.data.specialFeatured.entries.map(
                   (o, index) =>
-                    `${index + 1}. ${o.items[0].name} - ${o.finalPrice} <:vbux:709204621075415070>`
+                    `${index + 1}. ${o.items[0].name} - ${o.finalPrice} <:vbux:747505712757997578>`
                 )
                .join("\n"))
       }
@@ -126,7 +126,7 @@ if (command === 'shop') {
       if (res.data.specialDaily) {
         embed.addField(`**- Special Daily**`, res.data.specialDaily.entries.map(
                   (o, index) =>
-                    `${index + 1}. ${o.items[0].name} - ${o.finalPrice} <:vbux:709204621075415070>`
+                    `${index + 1}. ${o.items[0].name} - ${o.finalPrice} <:vbux:747505712757997578>`
                 )
                .join("\n"))
       }
