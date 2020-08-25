@@ -36,62 +36,6 @@ if (command === 'say') {
   
   message.channel.send(content);
 }
-if (command === 'leaked') {
-const FortniteAPI = require("fortnite-api-io");
-const fortniteAPI = new FortniteAPI("API-KEY");
-
-  let skin = [];
-  let backpack = [];
-  let pickaxe = [];
-  let emote = [];
-  let emoji = [];
-  let wrap = [];
-  let glider = [];
-
-    const upcomingItems = await fortniteAPI.listUpcomingItems(lang);
-
-    upcomingItems.items.map((o, index) => {
-      if (o.type === 'backpack') {
-        backpack.push(o.name)
-      }
-
-      if (o.type === 'outfit') {
-        skin.push(o.name);
-      }
-
-      if (o.type === 'emote') {
-        emote.push(o.name);
-      }
-
-      if (o.type === 'pickaxe') {
-        pickaxe.push(o.name);
-      }
-
-      if (o.type === 'wrap') {
-        wrap.push(o.name);
-      }
-
-      if (o.type === 'emoji') {
-        emoji.push(o.name);
-      }
-
-      if (o.type === 'glider') {
-        glider.push(o.name);
-      }
-
-    })  
-  const embed = new Discord.MessageEmbed()
-  .setColor('RANDOM')
-  .setTitle('Leaked')
-  if (skin) embed.addField(`- Skins (${skin.length})`, skin.join('\n'));
-  if (emote) embed.addField(`- Emotes (${emote.length})`, `${emote.join('\n')}`);
-  if (backpack) embed.addField(`- Backpacks (${backpack.length})`, `${backpack.join('\n')}`);
-  if (pickaxe) embed.addField(`- Pickaxes (${pickaxe.length})`, `${pickaxe.join('\n')}`);
-  if (wrap) embed.addField(`- Wraps (${wrap.length})`, `${wrap.join('\n')}`);
-  if (glider) embed.addField(`- Gliders (${glider.length})`, `${glider.join('\n')}`);
-  
-  message.channel.send(embed);
-}
 
 if (command === 'shop') {
       Fortnite.BRShop()
@@ -489,7 +433,62 @@ if (command === 'cosmetic') {
     }}).catch(e => {
       console.log(e)
       message.channel.send(`No cosmetic was found for: ${content}`)
-    })
+    })if (command === 'leaked') {
+const FortniteAPI = require("fortnite-api-io");
+const fortniteAPI = new FortniteAPI("API-KEY");
+
+  let skin = [];
+  let backpack = [];
+  let pickaxe = [];
+  let emote = [];
+  let emoji = [];
+  let wrap = [];
+  let glider = [];
+
+    const upcomingItems = await fortniteAPI.listUpcomingItems(lang);
+
+    upcomingItems.items.map((o, index) => {
+      if (o.type === 'backpack') {
+        backpack.push(o.name)
+      }
+
+      if (o.type === 'outfit') {
+        skin.push(o.name);
+      }
+
+      if (o.type === 'emote') {
+        emote.push(o.name);
+      }
+
+      if (o.type === 'pickaxe') {
+        pickaxe.push(o.name);
+      }
+
+      if (o.type === 'wrap') {
+        wrap.push(o.name);
+      }
+
+      if (o.type === 'emoji') {
+        emoji.push(o.name);
+      }
+
+      if (o.type === 'glider') {
+        glider.push(o.name);
+      }
+
+    })  
+  const embed = new Discord.MessageEmbed()
+  .setColor('RANDOM')
+  .setTitle('Leaked')
+  if (skin) embed.addField(`- Skins (${skin.length})`, skin.join('\n'));
+  if (emote) embed.addField(`- Emotes (${emote.length})`, `${emote.join('\n')}`);
+  if (backpack) embed.addField(`- Backpacks (${backpack.length})`, `${backpack.join('\n')}`);
+  if (pickaxe) embed.addField(`- Pickaxes (${pickaxe.length})`, `${pickaxe.join('\n')}`);
+  if (wrap) embed.addField(`- Wraps (${wrap.length})`, `${wrap.join('\n')}`);
+  if (glider) embed.addField(`- Gliders (${glider.length})`, `${glider.join('\n')}`);
+  
+  message.channel.send(embed);
+}
 }
 
 }
