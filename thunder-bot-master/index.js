@@ -38,7 +38,8 @@ if (command === 'say') {
 }
 if (command === 'leaked') {
 const FortniteAPI = require("fortnite-api-io");
-const fortniteAPI = new FortniteAPI("API-KEY"); // 12345
+const fortniteAPI = new FortniteAPI("API-KEY"); // 7d283ce3-916c915b-dc4e615e-e3d25c1c
+
 
   let skin = [];
   let backpack = [];
