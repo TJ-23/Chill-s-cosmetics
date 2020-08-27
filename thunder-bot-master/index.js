@@ -171,7 +171,7 @@ if (command === 'cosmetic') {
                 .map(
                   (o, index) =>
                     `${index}. [${o.name}](${o.icons.icon}), ${o.id}`
-                ).slice(15)
+                ).slice(15)[0]
                 .join("\n"))
         .setTimestamp()
         message.channel.send(embed);
@@ -346,7 +346,7 @@ if (command === 'cosmetic') {
                 .map(
                   (o, index) =>
                     `${index}. [${o.name}](${o.icons.icon}), ${o.id}`
-                ).slice(15)
+                ).slice(15)[0]
                 .join("\n"))
         .setTimestamp()
         message.channel.send(embed);
