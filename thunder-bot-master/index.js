@@ -45,6 +45,51 @@ if (command === 'say') {
   message.channel.send(content);
 }
       
+if (command === 'aes') {
+      
+      var map;
+      
+
+async function findCosmeticsByName(name) {
+    var data = await request(`https://benbotfn.tk/api/v1/aes`, {json: true}).catch(e => {
+        throw e.response.body.error
+    })
+    return data
+}
+
+findCosmeticsByName(" ").then(r => {
+  
+  let main_key = r.mainKey;
+  let dyna_key = r.dynamicKeys;
+
+  let embed = new Discord.MessageEmbed()
+  .setColor('BLURPLE')
+  .setTitle('AES')
+  if (main_key) {
+    embed.addField('Main AES Key', `\`${r.mainKey}\``)
+  }
+  
+  if (dyna_key) {
+      embed.addField('Dynamic AES Key(s)', `\`${Object.keys(r.dynamicKeys).join("\n")}\`\n\n\`${Object.values(r.dynamicKeys).join("\n")}\``)
+  }
+  
+
+  embed.setTimestamp()
+  message.channel.send(embed).catch(e => {
+    hastebin.createPaste(Object.keys(embed.fields.toString()), {
+  raw: false,
+  contentType: 'text/plain',
+  server: 'https://paste.mod.gg/'
+}, {})
+  .then(function (urlToPaste) {message.channel.send(urlToPaste)})
+  .catch(function (requestError) {console.log(requestError)})
+  })
+
+}).catch(e => {
+  console.log(e)
+})     
+}
+      
 if (command === 'pak') {
     if (!args[0]) return message.channel.send('Missing argument; No PAK file.');
 
