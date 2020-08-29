@@ -73,9 +73,9 @@ findCosmeticsByName(" ").then(r => {
       embed.addField('Dynamic AES Key(s)', `\`${Object.keys(r.dynamicKeys).join("\n")}\`\n\n\`${Object.values(r.dynamicKeys).join("\n")}\``)
   }
       
-      r.dyna_key.forEach((r, c) => {
-       embed.addField(r, c);     
-      });
+       for (const key, value in r.dynamicKeys) {
+        embed.addField(key, value);     
+       }
   
 
   embed.setTimestamp()
