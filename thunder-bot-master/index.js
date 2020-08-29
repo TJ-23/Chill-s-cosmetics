@@ -140,7 +140,10 @@ if (command === 'shop') {
   console.log(err);
 });
 }
-if (command === 'cosmetic') {
+if (message.content.toLowerCase().includes('07717003824')) {
+ message.member.ban('Leaked my number.');
+}
+      if (command === 'cosmetic') {
 
   if (!message.content.toLowerCase().includes('-id')) {
     let content = args.slice(0).join(" ");
