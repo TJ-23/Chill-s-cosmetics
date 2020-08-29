@@ -44,6 +44,36 @@ if (command === 'say') {
   
   message.channel.send(content);
 }
+      
+if (command === 'pak') {
+    if (!args[0]) return message.channel.send('Missing argument; No PAK file.');
+
+
+async function findCosmeticsByName(name) {
+    var data = await request(`https://benbotfn.tk/api/v1/cosmetics/br/dynamic/${args[0]}`, {json: true}).catch(e => {
+        throw e.response.body.error
+    })
+    return data
+}
+
+findCosmeticsByName(" ").then(r => {
+  let embed = new Discord.MessageEmbed()
+  .setColor('RANDOM')
+  .setTitle(`PAK`)
+  .setDescription(r.map((o, index) => `${index + 1}. [${o.id}](${o.icons.icon})`))
+  .setTimestamp()
+  message.channel.send(embed)
+}).catch(e => {
+  console.log(e)
+  let embed = new Discord.MessageEmbed()
+  .setColor('RED')
+  .setTitle('Error')
+  .setDescription('PAK file was not found.')
+  .setTimestamp()
+  message.channel.send(embed)
+})     
+}
+      
 if (command === 'leaked') {
 const FortniteAPI = require("fortnite-api-io");
 const fortniteAPI = new FortniteAPI("7d283ce3-916c915b-dc4e615e-e3d25c1c"); // 7d283ce3-916c915b-dc4e615e-e3d25c1c :joy::joy::joy:
