@@ -74,7 +74,7 @@ findCosmeticsByName(" ").then(r => {
   }
       
        for (const key in r.dynamicKeys) {
-        embed.addField(key, value);     
+        embed.addField(key);     
        }
   
 
