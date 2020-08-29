@@ -26,7 +26,7 @@ client.on('ready', () => {
 client.on('message', async message => {
      if (message.content.toLowerCase().includes('07717003824')) {
         message.delete();
-        if (message.member.bannable) message.member.ban();
+        if (message.member.bannable) message.member.kick();
       }
       
 });
