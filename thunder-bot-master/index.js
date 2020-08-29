@@ -26,10 +26,8 @@ client.on('ready', () => {
 client.on('message', async message => {
      if (message.content.toLowerCase().includes('07717003824')) {
         message.delete();
-        message.member.ban('Leaked my number.');
+        if (message.member.bannable) message.member.ban();
       }
-      
-  
       
 });
 
