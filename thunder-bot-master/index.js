@@ -72,11 +72,10 @@ findCosmeticsByName(" ").then(r => {
   if (dyna_key) {
       embed.addField('Dynamic AES Key(s)', `\`${Object.keys(r.dynamicKeys).join("\n")}\`\n\n\`${Object.values(r.dynamicKeys).join("\n")}\``)
   }
-      
-       for (const key in r.dynamicKeys) {
-        embed.addField(key, Object.entries(r.dynamicKeys[key]));     
-       }
-  
+
+         r.dynaKeys.forEach((key, value) => {
+             embed.addField(key, value);   
+         });
 
   embed.setTimestamp()
   message.channel.send(embed).catch(e => {
