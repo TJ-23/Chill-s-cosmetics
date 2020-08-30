@@ -68,14 +68,9 @@ findCosmeticsByName(" ").then(r => {
   if (main_key) {
     embed.addField('Main AES Key', `\`${r.data.mainKey.toUpperCase()}\``)
   }
-  /*
-  if (dyna_key) {
-      embed.addField('Dynamic AES Key(s)', `\`${Object.keys(r.data.dynamicKeys).join("\n")}\`\n\n\`${Object.values(r.data.dynamicKeys).join("\n")}\``)
-  }
-  */
       
    r.data.dynamicKeys.forEach((pakFilename, key) => {
-    embed.addField(pakFilename.pakFilename, `\`${pakFilename.key.toUpperCase()}\``);
+    embed.addField(pakFilename.pakFilename, `\`0x${pakFilename.key.toUpperCase()}\``);
    });
       
   embed.setTimestamp()
