@@ -66,7 +66,7 @@ findCosmeticsByName(" ").then(r => {
   .setColor('BLURPLE')
   .setTitle('AES')
   if (main_key) {
-    embed.addField('Main AES Key', `\`${r.data.mainKey}\``)
+    embed.addField('Main AES Key', `\`${r.data.mainKey.toUpperCase()}\``)
   }
   /*
   if (dyna_key) {
@@ -75,9 +75,7 @@ findCosmeticsByName(" ").then(r => {
   */
       
    r.data.dynamicKeys.forEach((pakFilename, key) => {
-    embed.addField(pakFilename.pakFilename, pakFilename.key);
-         console.log(pakFilename)
-         console.log(key)
+    embed.addField(pakFilename.pakFilename, `\`${pakFilename.key.toUpperCase()}\``);
    });
       
   embed.setTimestamp()
