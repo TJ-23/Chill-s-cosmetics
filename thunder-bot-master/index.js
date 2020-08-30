@@ -51,7 +51,7 @@ if (command === 'aes') {
       
 
 async function findCosmeticsByName(name) {
-    var data = await request(`https://benbotfn.tk/api/v1/aes`, {json: true}).catch(e => {
+    var data = await request(`https://fortnite-api.com/v2/aes`, {json: true}).catch(e => {
         throw e.response.body.error
     })
     return data
@@ -72,6 +72,10 @@ findCosmeticsByName(" ").then(r => {
   if (dyna_key) {
       embed.addField('Dynamic AES Key(s)', `\`${Object.keys(r.dynamicKeys).join("\n")}\`\n\n\`${Object.values(r.dynamicKeys).join("\n")}\``)
   }
+      
+   r.dynamicKeys.forEach((pakFilename, key) => {
+    embed.addField(pakFilename, key);     
+   });
       
   embed.setTimestamp()
   message.channel.send(embed).catch(e => {
