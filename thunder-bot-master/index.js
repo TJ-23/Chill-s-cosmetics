@@ -59,21 +59,22 @@ async function findCosmeticsByName(name) {
 
 findCosmeticsByName(" ").then(r => {
   
-  let main_key = r.mainKey;
-  let dyna_key = r.dynamicKeys;
+  let main_key = r.data.mainKey;
+  let dyna_key = r.data.dynamicKeys;
 
   let embed = new Discord.MessageEmbed()
   .setColor('BLURPLE')
   .setTitle('AES')
   if (main_key) {
-    embed.addField('Main AES Key', `\`${r.mainKey}\``)
+    embed.addField('Main AES Key', `\`${r.data.mainKey}\``)
   }
-  
+  /*
   if (dyna_key) {
-      embed.addField('Dynamic AES Key(s)', `\`${Object.keys(r.dynamicKeys).join("\n")}\`\n\n\`${Object.values(r.dynamicKeys).join("\n")}\``)
+      embed.addField('Dynamic AES Key(s)', `\`${Object.keys(r.data.dynamicKeys).join("\n")}\`\n\n\`${Object.values(r.data.dynamicKeys).join("\n")}\``)
   }
+  */
       
-   r.dynamicKeys.forEach((pakFilename, key) => {
+   r.data.dynamicKeys.forEach((pakFilename, key) => {
     embed.addField(pakFilename, key);     
    });
       
