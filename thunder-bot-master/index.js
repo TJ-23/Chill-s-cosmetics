@@ -73,7 +73,7 @@ findCosmeticsByName(" ").then(r => {
       embed.addField('Dynamic AES Key(s)', `\`${Object.keys(r.dynamicKeys).join("\n")}\`\n\n\`${Object.values(r.dynamicKeys).join("\n")}\``)
   }
 
-         r.dynaKeys.forEach((key, value) => {
+         r.dynamicKeys.forEach((key, value) => {
              embed.addField(key, value);   
          });
 
