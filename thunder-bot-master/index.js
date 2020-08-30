@@ -75,7 +75,7 @@ findCosmeticsByName(" ").then(r => {
   */
       
    r.data.dynamicKeys.forEach((pakFilename, key) => {
-    embed.addField(pakFilename, key);
+    embed.addField(pakFilename.pakFilename, pakFilename.key);
          console.log(pakFilename)
          console.log(key)
    });
